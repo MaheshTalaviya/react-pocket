@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+  <link rel="shortcut icon" href="assets/images/favicon.png">
+  <title>Pocketi - Users</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/select2.min.css">
+  <link rel="stylesheet" href="assets/css/icon.css">
+  <link rel="stylesheet" href="assets/css/ui.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body>
+
+
+  <header class="site-header">
+    <div class="row align-items-center">
+      <div class="col-xl-2 col-lg-3 col-sm-5 col-8">
+        <div class="logo">
+          <div class="mobClick">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <img src="assets/images/logo.svg" alt="">
+        </div>
+      </div>
+      <div class="col-xl-7 col-lg-4 col-sm-1 col-1">
+        <div class="site-nav">
+          <ul class="clearfix">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="transactions.html">Transactions</a></li>
+            <li><a class="active" href="users.html">Users</a></li>
+            <li><a href="merchants.html">Merchants</a></li>
+            <li><a href="approvals.html">Approvals</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-5 col-sm-6 col-3">
+        <div class="header-right">
+          <div class="top-search">
+            <div class="search-wrap clearable">
+              <input type="text" class="form-control" placeholder="Search">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <i class="clearable__clear icon-icon-close2"></i>
+            </div>
+          </div>
+          <div class="dropdown btnSet">
+            <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="account-settings.html">Account Settings</a>
+              <a class="dropdown-item" href="admin-management.html">Admin's Management</a>
+              <a class="dropdown-item" href="login.html">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="dash-wrap">
+
+    <div class="sec-block alt first">
+      <div class="row modified">
+        <div class="col-xl-4 col-lg-12">
+          <div class="block-single alt">
+            <div class="block-heading">
+              <h2>Daily Growth</h2>
+              <div class="custom-select-wrap">
+                <select class="custom-select" name="state">
+                  <option>Last weeks</option>
+                  <option>Four weeks</option>
+                  <option>Six weeks</option>
+                </select>
+              </div>
+            </div>
+            <div class="growth-chart for-user">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6">
+          <div class="block-single alt">
+            <div class="block-heading">
+              <h2>Individual vs Business</h2>
+              <div class="custom-select-wrap">
+                <select class="custom-select" name="state">
+                  <option>Last weeks</option>
+                  <option>Four weeks</option>
+                  <option>Six weeks</option>
+                </select>
+              </div>
+            </div>
+            <div class="inde-business-chart">
+              <canvas id="myChart2"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6">
+          <div class="block-single alt">
+            <div class="block-heading">
+              <h2>Users by Mobile Operators</h2>
+              <div class="custom-select-wrap">
+                <select class="custom-select" name="state">
+                  <option>This Months</option>
+                  <option>12 Months</option>
+                  <option>18 Months</option>
+                  <option>24 Months</option>
+                </select>
+              </div>
+            </div>
+            <div class="user-chart for-user">
+              <canvas id="myDoughnutChart"></canvas>
+              <div class="user-chart-count">
+                <h3>67,734</h3>
+                <p>overall users</p>
+              </div>
+              <div class="user-chart-level">
+                <ul>
+                  <li><span class="chart-level-bg level-shop">25%</span> <span class="chart-level-txt">Vodafone</span>
+                  </li>
+                  <li><span class="chart-level-bg level-payment">20%</span> <span class="chart-level-txt">MTN
+                      Ghana</span></li>
+                  <li><span class="chart-level-bg level-food">15%</span> <span class="chart-level-txt">Tigo Ghana</span>
+                  </li>
+                  <li><span class="chart-level-bg level-school">10%</span> <span class="chart-level-txt">Expresso</span>
+                  </li>
+                  <li><span class="chart-level-bg level-travel">5%</span> <span class="chart-level-txt">Airtel
+                      Ghana</span></li>
+                  <li><span class="chart-level-bg level-other">3%</span> <span class="chart-level-txt">Glo Mobile</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="sec-block alt">
+      <div class="block-single auto">
+        <div class="block-heading">
+          <h2>Users</h2>
+          <div class="table-btn">
+            <!-- <ul class="select-filter">
+              <li>By status: Completed <span><i class="fa fa-times" aria-hidden="true"></i></span></li>
+              <li>By method: Payment <span><i class="fa fa-times" aria-hidden="true"></i></span></li>
+            </ul> -->
+            <a class="link green" href="kyc-management.html">KYC Management</a>
+            <div class="dropdown inline drop-filter">
+              <a class="dropdown-toggle link" data-toggle="dropdown" href="#"><i class="icon-icon-filter"></i>
+                Filters</a>
+              <div class="dropdown-menu">
+                <a class="clear-filter" href="#">Clear all</a>
+                <div class="row modified">
+                  <div class="col-5">
+                    <div class="filter-single">
+                      <h4>By status</h4>
+                      <label class="custom-check">Pending
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Completed
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Canceled
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7">
+                    <div class="filter-single">
+                      <h4>By transaction type</h4>
+                      <div class="row modified">
+                        <div class="col-6">
+                          <label class="custom-check">School Fees
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Bills
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Food
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Recharge
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                        <div class="col-6">
+                          <label class="custom-check">Travel
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Shopping
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Movies
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Others
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row modified">
+                  <div class="col-5">
+                    <div class="filter-single">
+                      <h4>By method</h4>
+                      <label class="custom-check">Payment
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Request
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7">
+                    <div class="filter-single">
+                      <h4>Sort by</h4>
+                      <label class="custom-check">Most recent
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Amount: from low to high
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Amount: from high to low
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <input class="btn btn-block green-btn" type="submit" name="" value="Apply">
+              </div>
+            </div>
+            <div class="custom-select-wrap alt">
+              <select class="custom-select" name="state">
+                <option>All time</option>
+                <option>This month</option>
+                <option>Last month</option>
+                <option>6 months</option>
+                <option>All time</option>
+                <option>Custom range</option>
+              </select>
+            </div>
+            <a class="link green" data-toggle="modal" data-target="#exportModal" href="#"><i
+                class="icon-icon-download"></i> Export</a>
+          </div>
+        </div>
+        <div class="transaction-main">
+          <div class="transaction-table">
+            <div class="table-responsive">
+              <table class="table theme-table">
+                <tr>
+                  <th>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </th>
+                  <th>User ID</th>
+                  <th>Name</th>
+                  <th>Phone number</th>
+                  <th>Email address</th>
+                  <th>Account type</th>
+                  <th>KYC Status</th>
+                  <th>Sent</th>
+                  <th>Received</th>
+                  <th style="width:160px;">Action</th>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-3.jpg" alt=""></span>
+                      <span class="sender-txt">Brandon Donkor</span>
+                    </div>
+                  </td>
+                  <td>+233 345 678 30 23</td>
+                  <td>brandondonkor@gmail.com</td>
+                  <td>Individual</td>
+                  <td>No request</td>
+                  <td>GH₵834.00</td>
+                  <td>GH₵128.00</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-lock"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-block"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-4.jpg" alt=""></span>
+                      <span class="sender-txt">Kwashie Opong</span>
+                    </div>
+                  </td>
+                  <td>+233 345 678 30 23</td>
+                  <td>kwasieman6@gmail.com</td>
+                  <td>Individual</td>
+                  <td>No request</td>
+                  <td>GH₵834.00</td>
+                  <td>GH₵128.00</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-lock"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-block"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-5.jpg" alt=""></span>
+                      <span class="sender-txt">Akua Ado</span>
+                    </div>
+                  </td>
+                  <td>+233 345 678 30 23</td>
+                  <td>akua88ado@gmail.com</td>
+                  <td>Business</td>
+                  <td>No request</td>
+                  <td>GH₵834.00</td>
+                  <td>GH₵128.00</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-lock"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-block"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-6.jpg" alt=""></span>
+                      <span class="sender-txt">Nkruma Essel</span>
+                    </div>
+                  </td>
+                  <td>+233 345 678 30 23</td>
+                  <td>nkrumanice@gmail.com</td>
+                  <td>Individual</td>
+                  <td>No request</td>
+                  <td>GH₵834.00</td>
+                  <td>GH₵128.00</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-lock"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-block"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-7.jpg" alt=""></span>
+                      <span class="sender-txt">Adjoa Seidu</span>
+                    </div>
+                  </td>
+                  <td>+233 345 678 30 23</td>
+                  <td>adjoaman@gmail.com</td>
+                  <td>Individual</td>
+                  <td>No request</td>
+                  <td>GH₵834.00</td>
+                  <td>GH₵128.00</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-lock"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-block"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-2.jpg" alt=""></span>
+                      <span class="sender-txt">Solomon Akie</span>
+                    </div>
+                  </td>
+                  <td>+233 345 678 30 23</td>
+                  <td>solomon168@gmail.com</td>
+                  <td>Business</td>
+                  <td>No request</td>
+                  <td>GH₵834.00</td>
+                  <td>GH₵128.00</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-lock"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-block"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-3.jpg" alt=""></span>
+                      <span class="sender-txt">Emma Tetteh</span>
+                    </div>
+                  </td>
+                  <td>+233 345 678 30 23</td>
+                  <td>emmatheteh@gmail.com</td>
+                  <td>Individual</td>
+                  <td>No request</td>
+                  <td>GH₵834.00</td>
+                  <td>GH₵128.00</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-lock"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-block"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-4.jpg" alt=""></span>
+                      <span class="sender-txt">Yorko Tettey</span>
+                    </div>
+                  </td>
+                  <td>+233 345 678 30 23</td>
+                  <td>yorko88@gmail.com</td>
+                  <td>Business</td>
+                  <td>No request</td>
+                  <td>GH₵834.00</td>
+                  <td>GH₵128.00</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-lock"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-block"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-pagination">
+          <ul>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+            <li><a class="active" href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <!-- Modal exportModal -->
+  <div class="modal fade" id="exportModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal exportModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Export</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="select-box-wrap">
+            <div class="row modified">
+              <div class="col-sm-4">
+                <div class="select-box active">
+                  <div class="select-box-left">
+                    <img src="assets/images/file-1.svg" alt="">
+                    <p>Excel</p>
+                    <div class="circle-tick">
+                      <img src="assets/images/circle-tick.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="select-box">
+                  <div class="select-box-left">
+                    <img src="assets/images/file-2.svg" alt="">
+                    <p>CSV</p>
+                    <div class="circle-tick">
+                      <img src="assets/images/circle-tick.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="select-box">
+                  <div class="select-box-left">
+                    <img src="assets/images/file-3.svg" alt="">
+                    <p>PDF</p>
+                    <div class="circle-tick">
+                      <img src="assets/images/circle-tick.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <input class="btn btn-block green-btn" type="submit" name="" value="Continue to export 342 listings">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal exportModal -->
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <script src="assets/js/select2.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <script type="text/javascript">
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    var gradientFill = ctx.createLinearGradient(0, 250, 0, 130);
+    gradientFill.addColorStop(1, "rgba(56, 182, 53, 1)");
+    gradientFill.addColorStop(0, "rgba(255, 255, 255, 0)");
+
+    var gradientFill2 = ctx.createLinearGradient(0, 250, 0, 80);
+    gradientFill2.addColorStop(1, "rgba(207, 238, 206, 1)");
+    gradientFill2.addColorStop(0, "rgba(255, 255, 255, 0)");
+
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      fillOpacity: .8,
+      data: {
+        labels: ['11', '12', '13', '14', '15', '16', '17'],
+        datasets: [
+          {
+            label: "Growth",
+            backgroundColor: gradientFill,
+            borderColor: "#38B635",
+            pointBorderColor: "#38B635",
+            borderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 4,
+            pointBackgroundColor: "#FFF",
+            data: [80, 60, 75, 80, 70, 120, 150]
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        bezierCurve: false,
+        elements: {
+          line: {
+            tension: 0
+          }
+        },
+        scales: {
+          xAxes: [{
+            gridLines: { color: "rgba(0, 0, 0, 0)" }
+          }],
+          yAxes: [{
+            ticks: { beginAtZero: true },
+            gridLines: { color: "rgba(244, 244, 244, 1)" }
+          }]
+        },
+
+        tooltips: {
+          custom: function (tooltip) {
+            if (!tooltip) return;
+            // disable displaying the color box;
+            tooltip.displayColors = false;
+          },
+          callbacks: {
+            // use label callback to return the desired label
+            label: function (tooltipItem, data) {
+              return "$" + tooltipItem.yLabel;
+            },
+            // remove title
+            title: function (tooltipItem, data) {
+              return;
+            }
+          },
+          backgroundColor: "#FFF",
+          borderColor: "rgba(0, 0, 0, 0.09)",
+          borderWidth: 1,
+          bodyFontColor: "rgba(0, 0, 0, 1)",
+          bodyAlign: 'center',
+          bodyFontSize: 14,
+          bodyFontStyle: 500
+        },
+        legend: {
+          align: 'end',
+          labels: {
+            boxWidth: 12,
+            fontColor: "#A4A7B0"
+          }
+        }
+      }
+    });
+
+
+    // chart-2 Bar chart
+    var ctx2 = document.getElementById('myChart2').getContext('2d');
+
+    var myChart2 = new Chart(ctx2, {
+      type: 'bar',
+      fillOpacity: .8,
+      data: {
+        labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+        datasets: [
+          {
+            label: "Individuals",
+            backgroundColor: '#38B635',
+            borderColor: "#38B635",
+            pointBorderColor: "#38B635",
+            borderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 4,
+            pointBackgroundColor: "#FFF",
+            data: [100, 80, 180, 300, 60, 200]
+          },
+          {
+            label: "Business",
+            backgroundColor: '#CFEECE',
+            borderColor: "#CFEECE",
+            pointBorderColor: "#CFEECE",
+            borderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 4,
+            pointBackgroundColor: "#FFF",
+            data: [60, 100, 150, 200, 150, 80]
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        bezierCurve: false,
+        elements: {
+          line: {
+            tension: 0
+          }
+        },
+        scales: {
+          xAxes: [{
+            gridLines: { color: "rgba(0, 0, 0, 0)" }
+          }],
+          yAxes: [{
+            ticks: { beginAtZero: true },
+            gridLines: { color: "rgba(244, 244, 244, 1)" }
+          }]
+        },
+
+        tooltips: {
+          custom: function (tooltip) {
+            if (!tooltip) return;
+            // disable displaying the color box;
+            tooltip.displayColors = false;
+          },
+          callbacks: {
+            // use label callback to return the desired label
+            label: function (tooltipItem, data) {
+              return "$" + tooltipItem.yLabel;
+            },
+            // remove title
+            title: function (tooltipItem, data) {
+              return;
+            }
+          },
+          backgroundColor: "#FFF",
+          borderColor: "rgba(0, 0, 0, 0.09)",
+          borderWidth: 1,
+          bodyFontColor: "rgba(0, 0, 0, 1)",
+          bodyAlign: 'center',
+          bodyFontSize: 14,
+          bodyFontStyle: 500
+        },
+        legend: {
+          align: 'end',
+          labels: {
+            boxWidth: 12,
+            fontColor: "#A4A7B0"
+          }
+        }
+      }
+    });
+    // chart-2 Bar chart
+
+
+    var ctx3 = document.getElementById('myDoughnutChart').getContext('2d');
+    var myDoughnutChart = new Chart(ctx3, {
+      type: 'doughnut',
+      data: {
+        labels: ['Shopping', 'Payment for Bills', 'Food', 'School Fees', 'Travel', 'Other'],
+        datasets: [
+          {
+            data: [25, 20, 15, 10, 5, 3],
+            backgroundColor: [
+              '#1C932F',
+              '#4EA5F6',
+              '#F75009',
+              '#59E827',
+              '#F79809',
+              '#7C27E8'
+            ],
+            borderColor: [
+              '#1C932F',
+              '#4EA5F6',
+              '#F75009',
+              '#59E827',
+              '#F79809',
+              '#7C27E8'
+            ],
+          },
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutoutPercentage: 70,
+        tooltips: {
+          custom: function (tooltip) {
+            if (!tooltip) return;
+            // disable displaying the color box;
+            tooltip.displayColors = false;
+          },
+          backgroundColor: "#FFF",
+          borderColor: "rgba(0, 0, 0, 0.09)",
+          borderWidth: 1,
+          bodyFontColor: "rgba(0, 0, 0, 1)",
+          bodyAlign: 'center',
+          bodyFontSize: 14,
+          bodyFontStyle: 500
+        },
+        legend: {
+          align: 'center',
+          position: 'right',
+          display: false,
+          labels: {
+            boxWidth: 42,
+            padding: 15,
+            fontColor: "#373737"
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

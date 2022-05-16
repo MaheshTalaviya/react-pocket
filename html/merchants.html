@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <title>Pocketi - Merchants</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/icon.css">
+    <link rel="stylesheet" href="assets/css/ui.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+  </head>
+  <body>
+
+
+  <header class="site-header">
+    <div class="row align-items-center">
+      <div class="col-xl-2 col-lg-3 col-sm-5 col-8">
+        <div class="logo">
+          <div class="mobClick">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <img src="assets/images/logo.svg" alt="">
+        </div>
+      </div>
+      <div class="col-xl-7 col-lg-4 col-sm-1 col-1">
+        <div class="site-nav">
+          <ul class="clearfix">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="transactions.html">Transactions</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a class="active" href="merchants.html">Merchants</a></li>
+            <li><a href="approvals.html">Approvals</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-5 col-sm-6 col-3">
+        <div class="header-right">
+          <div class="top-search">
+            <div class="search-wrap clearable">
+              <input type="text" class="form-control" placeholder="Search">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <i class="clearable__clear icon-icon-close2"></i>
+            </div>
+          </div>
+          <div class="dropdown btnSet">
+            <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="account-settings.html">Account Settings</a>
+              <a class="dropdown-item" href="admin-management.html">Admin's Management</a>
+              <a class="dropdown-item" href="login.html">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="dash-wrap">
+
+    <div class="sec-block alt first">
+      <div class="row modified">
+        <div class="col-xl-7 col-lg-6">
+          <div class="block-single alt">
+            <div class="block-heading">
+              <h2>The Most Clickable Merchant Ads</h2>
+              <div class="custom-select-wrap">
+                <select class="custom-select" name="state">
+                  <option>Last weeks</option>
+                  <option>Four weeks</option>
+                  <option>Six weeks</option>
+                </select>
+              </div>
+            </div>
+            <div class="merchant-rev">
+              <ul class="merchant-rev-details forMerchant">
+                <li>
+                  <span class="merchant-img"><img src="assets/images/merchant-1.png" alt=""></span>
+                  <span class="merchant-stat" style="width:80%;">
+                    <span class="bg"></span>
+                    <span class="merchant-val">GH₵23.455.00</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="merchant-img"><img src="assets/images/merchant-2.png" alt=""></span>
+                  <span class="merchant-stat" style="width:88%;">
+                    <span class="bg"></span>
+                    <span class="merchant-val">GH₵23.455.00</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="merchant-img"><img src="assets/images/merchant-3.png" alt=""></span>
+                  <span class="merchant-stat active" style="width:100%;">
+                    <span class="bg"></span>
+                    <span class="merchant-val">GH₵23.455.00</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="merchant-img"><img src="assets/images/merchant-4.png" alt=""></span>
+                  <span class="merchant-stat" style="width:86%;">
+                    <span class="bg"></span>
+                    <span class="merchant-val">GH₵23.455.00</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="merchant-img"><img src="assets/images/merchant-5.png" alt=""></span>
+                  <span class="merchant-stat" style="width:90%;">
+                    <span class="bg"></span>
+                    <span class="merchant-val">GH₵23.455.00</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-5 col-lg-6">
+          <div class="block-single alt">
+            <div class="block-heading">
+              <h2>Merchants by Transactions</h2>
+              <div class="custom-select-wrap">
+                <select class="custom-select" name="state">
+                  <option>This Months</option>
+                  <option>12 Months</option>
+                  <option>18 Months</option>
+                  <option>24 Months</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row modified">
+              <div class="col-lg-5">
+                <div class="merchantTrans-chart">
+                  <canvas id="myDoughnutChart"></canvas>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="user-chart-level multiple">
+                  <ul>
+                    <li><span class="chart-level-bg lightgreen">36%</span> <span class="chart-level-txt"><img src="assets/images/merc-1.png" alt=""></span></li>
+                    <li><span class="chart-level-bg purple">14%</span> <span class="chart-level-txt"><img src="assets/images/merc-2.png" alt=""></span></li>
+                    <li><span class="chart-level-bg yellow">32%</span> <span class="chart-level-txt"><img src="assets/images/merc-3.png" alt=""></span></li>
+                    <li><span class="chart-level-bg red">12%</span> <span class="chart-level-txt"><img src="assets/images/merc-4.png" alt=""></span></li>
+                    <li><span class="chart-level-bg green">27%</span> <span class="chart-level-txt"><img src="assets/images/merc-5.png" alt=""></span></li>
+                    <li><span class="chart-level-bg pink">10%</span> <span class="chart-level-txt"><img src="assets/images/merc-6.png" alt=""></span></li>
+                    <li><span class="chart-level-bg sky">16%</span> <span class="chart-level-txt"><img src="assets/images/merc-7.png" alt=""></span></li>
+                    <li><span class="chart-level-bg blue">8%</span> <span class="chart-level-txt"><img src="assets/images/merc-8.png" alt=""></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="sec-block alt">
+      <div class="block-single auto">
+        <div class="block-heading">
+          <h2>Merchants</h2>
+          <div class="table-btn">
+            <!-- <ul class="select-filter">
+              <li>By status: Completed <span><i class="fa fa-times" aria-hidden="true"></i></span></li>
+              <li>By method: Payment <span><i class="fa fa-times" aria-hidden="true"></i></span></li>
+            </ul> -->
+            <a data-toggle="modal" data-target="#addMerchantModal" class="link" href="kyc-management.html"><img src="assets/images/icon-plus.svg" alt=""> Add a merchant</a>
+            <a data-toggle="modal" data-target="#createCampaignModal" class="link green" href="kyc-management.html">Create a new ad campaign</a>
+            <div class="dropdown inline drop-filter">
+              <a class="dropdown-toggle link" data-toggle="dropdown" href="#"><i class="icon-icon-filter"></i> Filters</a>
+              <div class="dropdown-menu">
+                <a class="clear-filter" href="#">Clear all</a>
+                <div class="row modified">
+                  <div class="col-5">
+                    <div class="filter-single">
+                      <h4>By status</h4>
+                      <label class="custom-check">Pending
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Completed
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Canceled
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7">
+                    <div class="filter-single">
+                      <h4>By transaction type</h4>
+                      <div class="row modified">
+                        <div class="col-6">
+                          <label class="custom-check">School Fees
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Bills
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Food
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Recharge
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                        <div class="col-6">
+                          <label class="custom-check">Travel
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Shopping
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Movies
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Others
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row modified">
+                  <div class="col-5">
+                    <div class="filter-single">
+                      <h4>By method</h4>
+                      <label class="custom-check">Payment
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Request
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7">
+                    <div class="filter-single">
+                      <h4>Sort by</h4>
+                      <label class="custom-check">Most recent
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Amount: from low to high
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Amount: from high to low
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <input class="btn btn-block green-btn" type="submit" name="" value="Apply">
+              </div>
+            </div>
+            <div class="custom-select-wrap alt">
+              <select class="custom-select" name="state">
+                <option>All time</option>
+                <option>This month</option>
+                <option>Last month</option>
+                <option>6 months</option>
+                <option>All time</option>
+                <option>Custom range</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="transaction-main">
+          <div class="transaction-table">
+            <div class="table-responsive">
+              <table class="table theme-table">
+                <tr>
+                  <th>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </th>
+                  <th>Merchant ID</th>
+                  <th>Date added</th>
+                  <th>Name</th>
+                  <th>Website</th>
+                  <th>Type</th>
+                  <th>Ads</th>
+                  <th style="width:120px;">Action</th>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span> </div></td>
+                  <td>
+                    <div class="sender merch">
+                      <span class="sender-img"><img src="assets/images/merc-5.png" alt=""></span>
+                      <span class="sender-txt">Pioneer Investments Group</span>
+                    </div>
+                  </td>
+                  <td>https://pioneerinvestments.com</td>
+                  <td>Banking</td>
+                  <td>Activated</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-edit"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span> </div></td>
+                  <td>
+                    <div class="sender merch">
+                      <span class="sender-img"><img src="assets/images/merc-8.png" alt=""></span>
+                      <span class="sender-txt">Joslin Henry Real Estate Agency</span>
+                    </div>
+                  </td>
+                  <td>https://joslinhenrymain.gh</td>
+                  <td>Real Estate</td>
+                  <td>Activated</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-edit"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span> </div></td>
+                  <td>
+                    <div class="sender merch">
+                      <span class="sender-img"><img src="assets/images/merc-3.png" alt=""></span>
+                      <span class="sender-txt">Ethiopian Airlines</span>
+                    </div>
+                  </td>
+                  <td>https://ethiopianairlines.et</td>
+                  <td>Travel</td>
+                  <td>Activated</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-edit"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span> </div></td>
+                  <td>
+                    <div class="sender merch">
+                      <span class="sender-img"><img src="assets/images/merc-1.png" alt=""></span>
+                      <span class="sender-txt">EgyptianAir</span>
+                    </div>
+                  </td>
+                  <td>https://egyptair.com</td>
+                  <td>Travel</td>
+                  <td>Activated</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-edit"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span> </div></td>
+                  <td>
+                    <div class="sender merch">
+                      <span class="sender-img"><img src="assets/images/merc-4.png" alt=""></span>
+                      <span class="sender-txt">ReaList Realty Ltd</span>
+                    </div>
+                  </td>
+                  <td>https://realist-realty.gh</td>
+                  <td>Real Estate</td>
+                  <td>Activated</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-edit"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span> </div></td>
+                  <td>
+                    <div class="sender merch">
+                      <span class="sender-img"><img src="assets/images/merc-7.png" alt=""></span>
+                      <span class="sender-txt">Real Store Ghana</span>
+                    </div>
+                  </td>
+                  <td>https:/real-store.com</td>
+                  <td>Shopping</td>
+                  <td>Not Activated</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-edit"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span> </div></td>
+                  <td>
+                    <div class="sender merch">
+                      <span class="sender-img"><img src="assets/images/merc-2.png" alt=""></span>
+                      <span class="sender-txt">InsCape Inc.</span>
+                    </div>
+                  </td>
+                  <td>https://inscape.com</td>
+                  <td>Shopping</td>
+                  <td>Not Activated</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-edit"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span> </div></td>
+                  <td>
+                    <div class="sender merch">
+                      <span class="sender-img"><img src="assets/images/merc-6.png" alt=""></span>
+                      <span class="sender-txt">Nike Factory Store Inc.</span>
+                    </div>
+                  </td>
+                  <td>https://nikefactorystore.com</td>
+                  <td>Shopping</td>
+                  <td>Activated</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-edit"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-pagination">
+          <ul>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+            <li><a class="active" href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <!-- Modal addMerchantModal -->
+  <div class="modal fade" id="addMerchantModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adding a new merchant</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="tabSimple">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#g-info">General Info</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#f-setup">Fees Setup</a></li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="g-info" role="tabpanel">
+              <div class="row modified">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Merchant name</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Merchant tag</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Merchant Type</label>
+                <div class="custom-select-wrap full large">
+                  <select class="custom-select" name="state">
+                    <option>Choose the merchant type</option>
+                    <option value="">Travel</option>
+                    <option value="">Shopping</option>
+                    <option value="">Banking</option>
+                    <option value="">Real Estate</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Subcategory</label>
+                <div class="custom-select-wrap full large">
+                  <select class="custom-select" name="state">
+                    <option>Choose the subcategory</option>
+                    <option value="">Travel</option>
+                    <option value="">Shopping</option>
+                    <option value="">Banking</option>
+                    <option value="">Real Estate</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+              <label for="">Upload logo</label>
+              <div class="row align-items-center modified">
+                <div class="col-sm-6">
+                  <div class="photoView">
+                    <div class="photoView-cont">
+                      <img src="assets/images/upload.png" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="uploadBtn-wrap">
+                    <div class="uploadBtn">
+                      <button class="btn grey-btn sm-btn" type="button"><i class="icon-icon-upload"></i> Upload</button>
+                      <input type="file" name="" value="">
+                    </div>
+                    <span>or drag it in</span>
+                    <p>Supported formats are JPEG, SVG <br> or PNG. Max file size is 5 MB.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row align-items-center modified">
+                <div class="col-sm-6">
+                  <label for="">Upload logo</label>
+                  <div class="photoView">
+                    <div class="photoView-cont">
+                      <img src="assets/images/upload.png" alt="">
+                    </div>
+                  </div>
+                  <div class="uploadBtn-wrap alt">
+                    <div class="uploadBtn">
+                      <button class="btn grey-btn sm-btn" type="button"><i class="icon-icon-upload"></i> Upload</button>
+                      <input type="file" name="" value="">
+                    </div>
+                    <span>or drag it in</span>
+                    <p>Supported formats are JPEG, SVG <br> or PNG. Max file size is 5 MB.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="">Cover image</label>
+                  <div class="photoView">
+                    <div class="photoView-cont">
+                      <img src="assets/images/upload.png" alt="">
+                    </div>
+                  </div>
+                  <div class="uploadBtn-wrap alt">
+                    <div class="uploadBtn">
+                      <button class="btn grey-btn sm-btn" type="button"><i class="icon-icon-upload"></i> Upload</button>
+                      <input type="file" name="" value="">
+                    </div>
+                    <span>or drag it in</span>
+                    <p>Supported formats are JPEG, SVG <br> or PNG. Max file size is 5 MB.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row modified">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Phone number</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Website URL</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Description</label>
+              <textarea name="name" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="">Additional features <span>(choose at least one)</span></label>
+              <label class="custom-check alt inline">Allow Chat
+                <input type="checkbox" class="yes" name="radio-1">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-check alt inline">Allow Payment
+                <input type="checkbox" class="no" name="radio-1">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-check alt inline">Allow QR Code Scan
+                <input type="checkbox" class="no" name="radio-1">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="">Are there any additional fileds required for payment?</label>
+              <label class="custom-radio inline">Yes
+                <input type="radio" class="yes" name="radio-1">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-radio inline">No
+                <input type="radio" class="no" name="radio-1">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            </div>
+
+
+
+
+            <div class="tab-pane fade" id="f-setup" role="tabpanel">
+              <div class="form-group">
+                <label style="display:inline-block;" for="">Include Fees</label>
+                <label class="switch">
+                  <input id="priceChanger" type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+              </div>
+              <div class="formInt form-group-inactive">
+                <div class="form-group">
+                  <label class="custom-radio inline">Fixed Fee per transaction
+                    <input type="radio" class="yes" name="radio-121">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="custom-radio inline">Percent of transaction amount
+                    <input type="radio" class="no" name="radio-121">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label for="">Cost bearer</label>
+                  <label class="custom-radio inline">Sender
+                    <input type="radio" class="yes" name="radio-122">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="custom-radio inline">Receiver
+                    <input type="radio" class="no" name="radio-122">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="custom-radio inline">Split fees
+                    <input type="radio" class="no" name="radio-122">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal addMerchantModal -->
+
+
+  <!-- Modal createCampaignModal -->
+  <div class="modal fade" id="createCampaignModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create a new ad campaign</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Merchant</label>
+              <div class="custom-select-wrap full large">
+                <select class="custom-select" name="state">
+                  <option>Choose a merchant</option>
+                  <option>Choose a merchant - 2</option>
+                  <option>Choose a merchant - 3</option>
+                  <option>Choose a merchant - 4</option>
+                  <option>Choose a merchant - 5</option>
+                  <option>Choose a merchant - 6</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="">Upload the image for the ad</label>
+              <div class="row modified">
+                <div class="col-sm-4">
+                  <div class="photoView">
+                    <div class="photoView-cont">
+                      <img src="assets/images/upload.png" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="uploadBtn-wrap">
+                    <div class="uploadBtn">
+                      <button class="btn grey-btn sm-btn" type="button"><i class="icon-icon-upload"></i> Upload</button>
+                      <input type="file" name="" value="">
+                    </div>
+                    <span>or drag it in</span>
+                    <p>Supported formats are JPEG, SVG <br> or PNG. Max file size is 5 MB.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row modified">
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Text description</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+
+              <div class="form-group">
+                <label for="">Duration</label>
+                <label class="custom-radio">Open-ended
+                  <input type="radio" name="radio-2" class="no">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="custom-radio">Select end date
+                  <input type="radio" name="radio-2" class="yes">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+             <div class="cons">
+               <div class="row modified">
+                 <div class="col-sm-6">
+                   <div class="form-group">
+                     <div class="inpIcon">
+                       <input class="form-control" data-provide="datepicker">
+                       <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+            </div>
+
+
+            <div class="">
+              <div class="form-group">
+                <label for="">Link</label>
+                <label class="custom-radio">Payment screen
+                  <input type="radio" name="radio-3" class="no">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="custom-radio">Custom URL
+                  <input type="radio" name="radio-3" class="yes">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+              <div class="cons">
+                <div class="row modified">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Add Custom URL">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <input class="btn btn-block green-btn" type="submit" name="" value="Activate">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal createCampaignModal -->
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <script src="assets/js/select2.min.js"></script>
+  <script src="assets/js/bootstrap-datepicker.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <script type="text/javascript">
+
+  $('.datepicker').datepicker();
+
+  var ctx3 = document.getElementById('myDoughnutChart').getContext('2d');
+  var myDoughnutChart = new Chart(ctx3, {
+      type: 'doughnut',
+      data: {
+          labels: ['Shopping', 'Payment for Bills', 'Food', 'School Fees', 'Travel', 'Other'],
+          datasets: [
+              {
+                data: [36, 14, 32, 12, 27, 10, 16, 8],
+                backgroundColor: [
+                  '#59E827',
+                  '#F79809',
+                  '#0676DD',
+                  '#DA2290',
+                  '#1C932F',
+                  '#F75009',
+                  '#7C27E8',
+                  '#4EA5F6'
+                ],
+                borderColor: [
+                  '#59E827',
+                  '#F79809',
+                  '#0676DD',
+                  '#DA2290',
+                  '#1C932F',
+                  '#F75009',
+                  '#7C27E8',
+                  '#4EA5F6'
+                ],
+              },
+          ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutoutPercentage: 0,
+          tooltips: {
+            custom: function(tooltip) {
+              if (!tooltip) return;
+              // disable displaying the color box;
+              tooltip.displayColors = false;
+            },
+            backgroundColor: "#FFF",
+            borderColor: "rgba(0, 0, 0, 0.09)",
+            borderWidth: 1,
+            bodyFontColor:"rgba(0, 0, 0, 1)",
+            bodyAlign: 'center',
+            bodyFontSize: 14,
+            bodyFontStyle: 500
+          },
+          legend: {
+            align:'center',
+            position: 'right',
+            display: false,
+            labels:{
+              boxWidth: 42,
+              padding: 15,
+              fontColor: "#373737"
+            }
+          }
+      }
+  });
+  </script>
+
+  <script type="text/javascript">
+  $('#priceChanger').change(function(){
+      if($(this).is(":checked")) {
+        $('.formInt').removeClass('form-group-inactive');
+      } else {
+        $('.formInt').addClass('form-group-inactive');
+      }
+  });
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,123 @@
+.ReactModal__Content.ReactModal__Content--after-open {
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+}
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  background-color: rgb(125 124 124 / 75%) !important;
+}
+.filter_dropdiv {
+  height: 100vh;
+}
+.filter_dropdiv .dropdown-menu {
+  display: block;
+  position: relative;
+}
+.dropdown.inline.drop-filter {
+  position: relative;
+}
+.filter_dropdiv {
+  position: absolute;
+  top: 36px;
+  right: -50px;
+  /* box-shadow: 0 0 10px #ccc; */
+  z-index: 99999999999;
+  background: #fff;
+  border-radius: 4px;
+  height: inherit;
+  padding-bottom: 20px;
+}
+.custom-select-wrap.alt {
+  margin: 0 12px;
+}
+.alltime_select {
+  border: none;
+  background: #fff;
+}
+.custom-select-wrap.alt.alltime_maincontainer {
+  position: relative !important;
+}
+.alltime_maincontainer .fa {
+  position: absolute;
+  color: #81868b;
+  margin-top: 10px;
+  right: 0;
+  font-size: 20px;
+}
+.statuslink i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+.statuslink:focus {
+  outline: 0;
+}
+.activeBtnColor {
+  background: #38b635 !important;
+  color: #fff !important;
+}
+.transactionTable .action-link:hover {
+  background-color: #f4f4f4;
+}
+.transactionTable .action-link.activeBtnColor:hover {
+  background: #38b635;
+}
+.transactionTable .action-link.activeBtnColor {
+  cursor: pointer;
+}
+button.action-link.statuslink.disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+/* .table-btn.new_table{
+  position: absolute;
+  right: 15%;
+  top: 24px;
+} */
+
+.transLink li a:hover {
+  background: #f4f4f4;
+  color: #a4a7b0;
+}
+.transLink li a:hover i::before {
+  color: #a4a7b0;
+}
+.transLink li a .icon-icon-refund:before {
+  color: #a4a7b0 !important;
+}
+
+.green_bg {
+  background: linear-gradient(8.59deg, #499e68 20.71%, #66b644 93.67%);
+}
+.cusTr {
+  height: 100px;
+  width: 100%;
+  padding: 20px 40px 0 0px;
+  background-color: #66b644 !important;
+}
+.dateText {
+  font-size: 12px;
+  color: #fff;
+  float: right;
+  margin-right: 40px;
+}
+.dateTr {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+}
+/* .custTitle {
+  font-size: 26px;
+  color: #666;
+  line-height: 28px;
+  text-align: center;
+  font-weight: 800 !important;
+  padding: 40px;
+} */
+.whiteBg {
+  background-color: #f1f1f1;
+}
+.greyBg {
+  background-color: #cfeece;
+}

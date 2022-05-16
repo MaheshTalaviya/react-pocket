@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+  <link rel="shortcut icon" href="assets/images/favicon.png">
+  <title>Pocketi - Dashboard</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/select2.min.css">
+  <link rel="stylesheet" href="assets/css/icon.css">
+  <link rel="stylesheet" href="assets/css/ui.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body>
+
+
+  <header class="site-header">
+    <div class="row align-items-center">
+      <div class="col-xl-2 col-lg-3 col-sm-5 col-8">
+        <div class="logo">
+          <div class="mobClick">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <img src="assets/images/logo.svg" alt="">
+        </div>
+      </div>
+      <div class="col-xl-7 col-lg-4 col-sm-1 col-1">
+        <div class="site-nav">
+          <ul class="clearfix">
+            <li><a class="active" href="dashboard.html">Home</a></li>
+            <li><a href="transactions.html">Transactions</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="merchants.html">Merchants</a></li>
+            <li><a href="approvals.html">Approvals</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-5 col-sm-6 col-3">
+        <div class="header-right">
+          <div class="top-search">
+            <div class="search-wrap clearable">
+              <input type="text" class="form-control" placeholder="Search">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <i class="clearable__clear icon-icon-close2"></i>
+            </div>
+          </div>
+          <div class="dropdown btnSet">
+            <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="account-settings.html">Account Settings</a>
+              <a class="dropdown-item" href="admin-management.html">Admin's Management</a>
+              <a class="dropdown-item" href="login.html">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="dash-wrap">
+    <div class="dash-stat">
+      <div class="row modified">
+        <div class="col-lg-3 col-sm-6">
+          <div class="dash-stat-single">
+            <h2>13,284</h2>
+            <p>individual users this month</p>
+            <div class="dash-stat-graph">
+              <div class="stat-percentage">+ 27% <img src="assets/images/arrow-up.svg" alt=""> </div>
+              <div class="stat-percentage-graph">
+                <ul>
+                  <li><span style="height:90%;"></span></li>
+                  <li><span style="height:100%;"></span></li>
+                  <li><span style="height:50%;"></span></li>
+                  <li><span class="graph-up" style="height:60%;"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="dash-stat-single">
+            <h2>8,523</h2>
+            <p>business users this month</p>
+            <div class="dash-stat-graph">
+              <div class="stat-percentage down">- 16% <img src="assets/images/arrow-down.svg" alt=""> </div>
+              <div class="stat-percentage-graph">
+                <ul>
+                  <li><span style="height:90%;"></span></li>
+                  <li><span style="height:100%;"></span></li>
+                  <li><span style="height:50%;"></span></li>
+                  <li><span class="graph-down" style="height:60%;"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="dash-stat-single">
+            <h2>328,518</h2>
+            <p>payments this month</p>
+            <div class="dash-stat-graph">
+              <div class="stat-percentage">+ 13% <img src="assets/images/arrow-up.svg" alt=""> </div>
+              <div class="stat-percentage-graph">
+                <ul>
+                  <li><span style="height:70%;"></span></li>
+                  <li><span style="height:80%;"></span></li>
+                  <li><span style="height:90%;"></span></li>
+                  <li><span class="graph-up" style="height:100%;"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="dash-stat-single">
+            <h2>100,165</h2>
+            <p>requests this month</p>
+            <div class="dash-stat-graph">
+              <div class="stat-percentage down">- 18% <img src="assets/images/arrow-down.svg" alt=""> </div>
+              <div class="stat-percentage-graph">
+                <ul>
+                  <li><span style="height:90%;"></span></li>
+                  <li><span style="height:100%;"></span></li>
+                  <li><span style="height:50%;"></span></li>
+                  <li><span class="graph-down" style="height:60%;"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-block alt">
+      <div class="row modified">
+        <div class="col-xl-5 col-lg-12">
+          <div class="block-single">
+            <div class="block-heading">
+              <h2>Payments vs Requests</h2>
+              <div class="custom-select-wrap">
+                <select class="custom-select" name="state">
+                  <option>Two weeks</option>
+                  <option>Four weeks</option>
+                  <option>Six weeks</option>
+                </select>
+              </div>
+            </div>
+            <div class="payment-req-chart">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6">
+          <div class="block-single">
+            <div class="block-heading">
+              <h2>Recent Transactions</h2>
+              <a class="btn-see" href="#">See All</a>
+            </div>
+            <div class="recent-trans">
+              <ul class="list-item">
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-1.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Game Inc.</h3>
+                    <h4><span>to</span> Pioneer Investments</h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>-GH₵1,651.31 <span>Aug 08, 2020</span> </h5>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-2.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Diane Larbi</h3>
+                    <h4><span>to</span> Egyptian Airlines</h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>-GH₵87.12 <span>Aug 03, 2020</span> </h5>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-3.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Bradley Donkor</h3>
+                    <h4><span>to</span> Nicolas Peprah</h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>-GH₵1,500 <span>Aug 01, 2020</span> </h5>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-4.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Akua Ado</h3>
+                    <h4><span>Electricity Bills</span></h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>-GH₵232.98 <span>Jul 28, 2020</span> </h5>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-5.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Simon Livingston</h3>
+                    <h4><span>School Fees</span></h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>-GH₵455.00 <span>Jul 27, 2020</span> </h5>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="block-single">
+            <div class="block-heading">
+              <h2>Pending Approvals</h2>
+              <a class="btn-see" href="#">See All</a>
+            </div>
+            <div class="pending-approval">
+              <ul class="list-item">
+                <li>
+                  <span class="list-item-txt">
+                    <h3>James Anderson</h3>
+                    <h4><span>requested</span> Refund</h4>
+                  </span>
+                  <span class="list-item-btn">
+                    <a href="#"><i class="icon-icon-tick"></i></a>
+                    <a class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-txt">
+                    <h3>Bob Ado</h3>
+                    <h4><span>changed</span> KYC status </h4>
+                  </span>
+                  <span class="list-item-btn">
+                    <a href="#"><i class="icon-icon-tick"></i></a>
+                    <a class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-txt">
+                    <h3>James Anderson</h3>
+                    <h4><span>changed</span> KYC status </h4>
+                  </span>
+                  <span class="list-item-btn">
+                    <a href="#"><i class="icon-icon-tick"></i></a>
+                    <a class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-txt">
+                    <h3>James Anderson</h3>
+                    <h4><span>requested</span> Refund</h4>
+                  </span>
+                  <span class="list-item-btn">
+                    <a href="#"><i class="icon-icon-tick"></i></a>
+                    <a class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-txt">
+                    <h3>Bradley Donkor</h3>
+                    <h4><span>requested</span> Refund</h4>
+                  </span>
+                  <span class="list-item-btn">
+                    <a href="#"><i class="icon-icon-tick"></i></a>
+                    <a class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-block alt">
+      <div class="row modified">
+        <div class="col-xl-4 col-lg-12">
+          <div class="block-single alt">
+            <div class="block-heading">
+              <h2>Individual vs Business</h2>
+              <div class="custom-select-wrap">
+                <select class="custom-select" name="state">
+                  <option>6 Months</option>
+                  <option>12 Months</option>
+                  <option>18 Months</option>
+                  <option>24 Months</option>
+                </select>
+              </div>
+            </div>
+            <div class="inde-business-chart">
+              <canvas id="myChart2"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6">
+          <div class="block-single alt">
+            <div class="block-heading">
+              <h2>Recent Users Registered</h2>
+              <a class="btn-see" href="#">See All</a>
+            </div>
+            <div class="recent-user">
+              <ul class="list-item">
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-2.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Bradley Donkor</h3>
+                    <h4><span>Individual</span></h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>+233 345 678 30 23 <span>bradley.donkor@gmail.com</span> </h5>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-3.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Nicolas Peprah</h3>
+                    <h4><span>Business</span></h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>+233 345 678 30 23 <span>nicolar1988@gmail.com</span> </h5>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-4.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Akua Ado</h3>
+                    <h4><span>Individual</span></h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>+233 345 678 30 23 <span>akua.ado11@gmail.com</span> </h5>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-5.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Simon Livingston</h3>
+                    <h4><span>Individual</span></h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>+233 345 678 30 23 <span>simontheliving@gmail.com</span> </h5>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-6.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Emma Teneth</h3>
+                    <h4><span>Business</span></h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>+233 345 678 30 23 <span>emmateneth@gmail.com</span> </h5>
+                  </span>
+                </li>
+                <li>
+                  <span class="list-item-img"><img src="assets/images/user-7.jpg" alt=""></span>
+                  <span class="list-item-txt">
+                    <h3>Diane Larbi</h3>
+                    <h4><span>Individual</span></h4>
+                  </span>
+                  <span class="list-item-details">
+                    <h5>+233 345 678 30 23 <span>dianethehunter@gmail.com</span> </h5>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6">
+          <div class="block-single alt">
+            <div class="block-heading">
+              <h2>Users Reach by Device</h2>
+              <div class="custom-select-wrap">
+                <select class="custom-select" name="state">
+                  <option>6 Months</option>
+                  <option>12 Months</option>
+                  <option>18 Months</option>
+                  <option>24 Months</option>
+                </select>
+              </div>
+            </div>
+            <div class="user-chart">
+              <canvas id="myDoughnutChart"></canvas>
+              <div class="user-chart-count">
+                <h3>67,734</h3>
+                <p>overall users</p>
+              </div>
+              <div class="user-chart-level">
+                <ul>
+                  <li><span class="chart-level-bg level-mob">75%</span> <span class="chart-level-txt">Mobile</span></li>
+                  <li><span class="chart-level-bg level-desk">15%</span> <span class="chart-level-txt">Desktop</span>
+                  </li>
+                  <li><span class="chart-level-bg level-tab">5%</span> <span class="chart-level-txt">Tablet</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-block alt">
+      <div class="row modified">
+        <div class="col-xl-6 col-lg-12">
+          <div class="block-single">
+            <div class="block-heading">
+              <h2>Merchants by Revenue</h2>
+              <div class="custom-select-wrap">
+                <select class="custom-select" name="state">
+                  <option>6 Months</option>
+                  <option>12 Months</option>
+                  <option>18 Months</option>
+                  <option>24 Months</option>
+                </select>
+              </div>
+            </div>
+            <div class="merchant-rev">
+              <ul class="merchant-rev-details">
+                <li>
+                  <span class="merchant-img"><img src="assets/images/merchant-1.png" alt=""></span>
+                  <span class="merchant-stat" style="width:80%;">
+                    <span class="bg"></span>
+                    <span class="merchant-val">GH₵23.455.00</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="merchant-img"><img src="assets/images/merchant-2.png" alt=""></span>
+                  <span class="merchant-stat" style="width:88%;">
+                    <span class="bg"></span>
+                    <span class="merchant-val">GH₵23.455.00</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="merchant-img"><img src="assets/images/merchant-3.png" alt=""></span>
+                  <span class="merchant-stat active" style="width:100%;">
+                    <span class="bg"></span>
+                    <span class="merchant-val">GH₵23.455.00</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="merchant-img"><img src="assets/images/merchant-4.png" alt=""></span>
+                  <span class="merchant-stat" style="width:86%;">
+                    <span class="bg"></span>
+                    <span class="merchant-val">GH₵23.455.00</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="merchant-img"><img src="assets/images/merchant-5.png" alt=""></span>
+                  <span class="merchant-stat" style="width:90%;">
+                    <span class="bg"></span>
+                    <span class="merchant-val">GH₵23.455.00</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-12">
+          <div class="block-single">
+            <div class="block-heading">
+              <h2>Merchants</h2>
+              <a class="btn-see" href="#">See All</a>
+            </div>
+            <div class="merchants">
+              <ul class="merchantList">
+                <li>
+                  <span class="merchants-img"><img src="assets/images/merchant-1.png" alt=""></span>
+                  <span class="merchants-details">
+                    <h3>Ethiopian Airlines <span>Travel</span></h3>
+                  </span>
+                  <span class="merchants-link"><a href="#">https://ethiopianairlines.et</a></span>
+                </li>
+                <li>
+                  <span class="merchants-img"><img src="assets/images/merchant-2.png" alt=""></span>
+                  <span class="merchants-details">
+                    <h3>EgyptAir <span>Travel</span></h3>
+                  </span>
+                  <span class="merchants-link"><a href="#">https://egyptair.com</a></span>
+                </li>
+                <li>
+                  <span class="merchants-img"><img src="assets/images/merchant-3.png" alt=""></span>
+                  <span class="merchants-details">
+                    <h3>Pioneer <span>Investments</span></h3>
+                  </span>
+                  <span class="merchants-link"><a href="#">https://pioneerinvestments.com</a></span>
+                </li>
+                <li>
+                  <span class="merchants-img"><img src="assets/images/merchant-4.png" alt=""></span>
+                  <span class="merchants-details">
+                    <h3>JoslinHenry <span>Real Estate</span></h3>
+                  </span>
+                  <span class="merchants-link"><a href="#">https://joslinhenrymain.gh</a></span>
+                </li>
+                <li>
+                  <span class="merchants-img"><img src="assets/images/merchant-5.png" alt=""></span>
+                  <span class="merchants-details">
+                    <h3>ReaList Realty <span>Real Estate</span></h3>
+                  </span>
+                  <span class="merchants-link"><a href="#">https://realist-realty.gh</a></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <script src="assets/js/select2.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <script type="text/javascript">
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    var gradientFill = ctx.createLinearGradient(0, 250, 0, 130);
+    gradientFill.addColorStop(1, "rgba(56, 182, 53, 1)");
+    gradientFill.addColorStop(0, "rgba(255, 255, 255, 0)");
+
+    var gradientFill2 = ctx.createLinearGradient(0, 250, 0, 80);
+    gradientFill2.addColorStop(1, "rgba(207, 238, 206, 1)");
+    gradientFill2.addColorStop(0, "rgba(255, 255, 255, 0)");
+
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      fillOpacity: .8,
+      data: {
+        labels: ['04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17'],
+        datasets: [
+          {
+            label: "Payments",
+            backgroundColor: gradientFill,
+            borderColor: "#38B635",
+            pointBorderColor: "#38B635",
+            borderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 4,
+            pointBackgroundColor: "#FFF",
+            data: [2, 2.5, 1.5, 1.8, 2, 2.4, 2, 2.5, 1.5, 1.8, 2, 1.4, 1.5, 1.8]
+          },
+          {
+            label: "Requests",
+            backgroundColor: gradientFill2,
+            borderColor: "#CFEECE",
+            pointBorderColor: "#CFEECE",
+            borderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 4,
+            pointBackgroundColor: "#FFF",
+            data: [3, 3.5, 2.5, 3, 3, 3.4, 3, 3.5, 2.5, 2.8, 3, 2.4, 2.5, 5]
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        bezierCurve: false,
+        elements: {
+          line: {
+            tension: 0
+          }
+        },
+        scales: {
+          xAxes: [{
+            gridLines: { color: "rgba(0, 0, 0, 0)" }
+          }],
+          yAxes: [{
+            ticks: { beginAtZero: true },
+            gridLines: { color: "rgba(244, 244, 244, 1)" }
+          }]
+        },
+
+        tooltips: {
+          custom: function (tooltip) {
+            if (!tooltip) return;
+            // disable displaying the color box;
+            tooltip.displayColors = false;
+          },
+          callbacks: {
+            // use label callback to return the desired label
+            label: function (tooltipItem, data) {
+              return "$" + tooltipItem.yLabel;
+            },
+            // remove title
+            title: function (tooltipItem, data) {
+              return;
+            }
+          },
+          backgroundColor: "#FFF",
+          borderColor: "rgba(0, 0, 0, 0.09)",
+          borderWidth: 1,
+          bodyFontColor: "rgba(0, 0, 0, 1)",
+          bodyAlign: 'center',
+          bodyFontSize: 14,
+          bodyFontStyle: 500
+        },
+        legend: {
+          align: 'end',
+          labels: {
+            boxWidth: 12,
+            fontColor: "#A4A7B0"
+          }
+        }
+      }
+    });
+
+
+    // chart-2 Bar chart
+    var ctx2 = document.getElementById('myChart2').getContext('2d');
+
+    var myChart2 = new Chart(ctx2, {
+      type: 'bar',
+      fillOpacity: .8,
+      data: {
+        labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+        datasets: [
+          {
+            label: "Individuals",
+            backgroundColor: '#38B635',
+            borderColor: "#38B635",
+            pointBorderColor: "#38B635",
+            borderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 4,
+            pointBackgroundColor: "#FFF",
+            data: [100, 80, 180, 300, 60, 200]
+          },
+          {
+            label: "Business",
+            backgroundColor: '#CFEECE',
+            borderColor: "#CFEECE",
+            pointBorderColor: "#CFEECE",
+            borderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 4,
+            pointBackgroundColor: "#FFF",
+            data: [60, 100, 150, 200, 150, 80]
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        bezierCurve: false,
+        elements: {
+          line: {
+            tension: 0
+          }
+        },
+        scales: {
+          xAxes: [{
+            gridLines: { color: "rgba(0, 0, 0, 0)" }
+          }],
+          yAxes: [{
+            ticks: { beginAtZero: true },
+            gridLines: { color: "rgba(244, 244, 244, 1)" }
+          }]
+        },
+
+        tooltips: {
+          custom: function (tooltip) {
+            if (!tooltip) return;
+            // disable displaying the color box;
+            tooltip.displayColors = false;
+          },
+          callbacks: {
+            // use label callback to return the desired label
+            label: function (tooltipItem, data) {
+              return "$" + tooltipItem.yLabel;
+            },
+            // remove title
+            title: function (tooltipItem, data) {
+              return;
+            }
+          },
+          backgroundColor: "#FFF",
+          borderColor: "rgba(0, 0, 0, 0.09)",
+          borderWidth: 1,
+          bodyFontColor: "rgba(0, 0, 0, 1)",
+          bodyAlign: 'center',
+          bodyFontSize: 14,
+          bodyFontStyle: 500
+        },
+        legend: {
+          align: 'end',
+          labels: {
+            boxWidth: 12,
+            fontColor: "#A4A7B0"
+          }
+        }
+      }
+    });
+    // chart-2 Bar chart
+
+
+    var ctx3 = document.getElementById('myDoughnutChart').getContext('2d');
+    var myDoughnutChart = new Chart(ctx3, {
+      type: 'doughnut',
+      data: {
+        labels: ['Mobile', 'Desktop', 'Tablet'],
+        datasets: [
+          {
+            data: [12.020, 10.016, 8.028],
+            backgroundColor: [
+              '#1C932F',
+              '#4EA5F6',
+              '#F79809'
+            ],
+            borderColor: [
+              '#1C932F',
+              '#4EA5F6',
+              '#F79809'
+            ],
+          },
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutoutPercentage: 70,
+        tooltips: {
+          custom: function (tooltip) {
+            if (!tooltip) return;
+            // disable displaying the color box;
+            tooltip.displayColors = false;
+          },
+          callbacks: {
+            label: function (tooltipItem, data) {
+              return data['datasets'][0]['data'][tooltipItem['index']];
+            }
+          },
+          backgroundColor: "#FFF",
+          borderColor: "rgba(0, 0, 0, 0.09)",
+          borderWidth: 1,
+          bodyFontColor: "rgba(0, 0, 0, 1)",
+          bodyAlign: 'center',
+          bodyFontSize: 14,
+          bodyFontStyle: 500
+        },
+        legend: {
+          align: 'center',
+          position: 'right',
+          display: false,
+          labels: {
+            boxWidth: 42,
+            padding: 15,
+            fontColor: "#373737"
+          }
+        }
+      }
+    });
+  </script>
+
+
+  <script type="text/javascript">
+    Chart.elements.Rectangle.prototype.draw = function () {
+
+      var ctx = this._chart.ctx;
+      var vm = this._view;
+      var left, right, top, bottom, signX, signY, borderSkipped, radius;
+      var borderWidth = vm.borderWidth;
+      // Set Radius Here
+      // If radius is large enough to cause drawing errors a max radius is imposed
+      var cornerRadius = 4;
+
+      if (!vm.horizontal) {
+        // bar
+        left = vm.x - vm.width / 2;
+        right = vm.x + vm.width / 2;
+        top = vm.y;
+        bottom = vm.base;
+        signX = 1;
+        signY = bottom > top ? 1 : -1;
+        borderSkipped = vm.borderSkipped || 'bottom';
+      } else {
+        // horizontal bar
+        left = vm.base;
+        right = vm.x;
+        top = vm.y - vm.height / 2;
+        bottom = vm.y + vm.height / 2;
+        signX = right > left ? 1 : -1;
+        signY = 1;
+        borderSkipped = vm.borderSkipped || 'left';
+      }
+
+      // Canvas doesn't allow us to stroke inside the width so we can
+      // adjust the sizes to fit if we're setting a stroke on the line
+      if (borderWidth) {
+        // borderWidth shold be less than bar width and bar height.
+        var barSize = Math.min(Math.abs(left - right), Math.abs(top - bottom));
+        borderWidth = borderWidth > barSize ? barSize : borderWidth;
+        var halfStroke = borderWidth / 2;
+        // Adjust borderWidth when bar top position is near vm.base(zero).
+        var borderLeft = left + (borderSkipped !== 'left' ? halfStroke * signX : 0);
+        var borderRight = right + (borderSkipped !== 'right' ? -halfStroke * signX : 0);
+        var borderTop = top + (borderSkipped !== 'top' ? halfStroke * signY : 0);
+        var borderBottom = bottom + (borderSkipped !== 'bottom' ? -halfStroke * signY : 0);
+        // not become a vertical line?
+        if (borderLeft !== borderRight) {
+          top = borderTop;
+          bottom = borderBottom;
+        }
+        // not become a horizontal line?
+        if (borderTop !== borderBottom) {
+          left = borderLeft;
+          right = borderRight;
+        }
+      }
+
+      ctx.beginPath();
+      ctx.fillStyle = vm.backgroundColor;
+      ctx.strokeStyle = vm.borderColor;
+      ctx.lineWidth = borderWidth;
+
+      // Corner points, from bottom-left to bottom-right clockwise
+      // | 1 2 |
+      // | 0 3 |
+      var corners = [
+        [left, bottom],
+        [left, top],
+        [right, top],
+        [right, bottom]
+      ];
+
+      // Find first (starting) corner with fallback to 'bottom'
+      var borders = ['bottom', 'left', 'top', 'right'];
+      var startCorner = borders.indexOf(borderSkipped, 0);
+      if (startCorner === -1) {
+        startCorner = 0;
+      }
+
+      function cornerAt(index) {
+        return corners[(startCorner + index) % 4];
+      }
+
+      // Draw rectangle from 'startCorner'
+      var corner = cornerAt(0);
+      ctx.moveTo(corner[0], corner[1]);
+
+      for (var i = 1; i < 4; i++) {
+        corner = cornerAt(i);
+        nextCornerId = i + 1;
+        if (nextCornerId == 4) {
+          nextCornerId = 0
+        }
+
+        nextCorner = cornerAt(nextCornerId);
+
+        width = corners[2][0] - corners[1][0];
+        height = corners[0][1] - corners[1][1];
+        x = corners[1][0];
+        y = corners[1][1];
+
+        var radius = cornerRadius;
+
+        // Fix radius being too large
+        if (radius > height / 2) {
+          radius = height / 2;
+        } if (radius > width / 2) {
+          radius = width / 2;
+        }
+
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width - radius, y);
+        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+        ctx.lineTo(x + width, y + height - radius);
+        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+        ctx.lineTo(x + radius, y + height);
+        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+
+      }
+
+      ctx.fill();
+      if (borderWidth) {
+        ctx.stroke();
+      }
+    };
+  </script>
+
+</body>
+
+</html>

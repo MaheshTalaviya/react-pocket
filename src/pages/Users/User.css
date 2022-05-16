@@ -1,0 +1,52 @@
+/* 
+.available-items {
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  max-height: calc(100vh - 200px);
+  margin-right: 14px;
+}
+.available-items::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(202, 92, 92, 0.3) !important;
+  background-color: #F5F5F5 !important;
+  border-radius: 10px !important;
+}
+.available-items::-webkit-scrollbar {
+  width: 5px !important;
+  background-color: #F5F5F5 !important;
+} */
+.modal_height {
+  height: 100vh;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  pointer-events: all !important;
+}
+.icon-icon-refund:before {
+  content: "\e913";
+  color: #ffffff !important;
+}
+.drop-filter .dropdown-menu {
+  width: 600px !important;
+}
+.ReactModal__Content.ReactModal__Content--after-open {
+  overflow: auto !important;
+}
+.ReactModal__Content.ReactModal__Content--after-open::-webkit-scrollbar {
+  visibility: hidden;
+}
+.cm_search {
+  display: inline-block;
+}
+.cm_search.search-wrap .fa {
+  position: absolute;
+  left: unset;
+  top: 10px;
+  color: #38b635;
+  font-size: 14px;
+  right: 10px;
+  cursor: pointer;
+}
+.cm_search .form-control {
+  height: unset;
+}

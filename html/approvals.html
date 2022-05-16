@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <title>Pocketi - Approvals</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/icon.css">
+    <link rel="stylesheet" href="assets/css/ui.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+  </head>
+  <body>
+
+
+  <header class="site-header">
+    <div class="row align-items-center">
+      <div class="col-xl-2 col-lg-3 col-sm-5 col-8">
+        <div class="logo">
+          <div class="mobClick">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <img src="assets/images/logo.svg" alt="">
+        </div>
+      </div>
+      <div class="col-xl-7 col-lg-4 col-sm-1 col-1">
+        <div class="site-nav">
+          <ul class="clearfix">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="transactions.html">Transactions</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="merchants.html">Merchants</a></li>
+            <li><a class="active" href="approvals.html">Approvals</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-5 col-sm-6 col-3">
+        <div class="header-right">
+          <div class="top-search">
+            <div class="search-wrap clearable">
+              <input type="text" class="form-control" placeholder="Search">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <i class="clearable__clear icon-icon-close2"></i>
+            </div>
+          </div>
+          <div class="dropdown btnSet">
+            <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="account-settings.html">Account Settings</a>
+              <a class="dropdown-item" href="admin-management.html">Admin's Management</a>
+              <a class="dropdown-item" href="login.html">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="dash-wrap">
+    <div class="sec-block alt first">
+      <div class="block-single auto">
+        <div class="block-heading mb-3">
+          <h2>Approvals</h2>
+          <div class="table-btn">
+            <div class="custom-select-wrap alt">
+              <select class="custom-select" name="state">
+                <option>6 Months</option>
+                <option>12 Months</option>
+                <option>18 Months</option>
+                <option>24 Months</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="transaction-main">
+          <div class="transaction-table">
+            <div class="table-responsive">
+              <table class="table theme-table">
+                <tr>
+                  <th>Approval ID</th>
+                  <th>Date requested</th>
+                  <th>Admin</th>
+                  <th>Action</th>
+                  <th>Comment</th>
+                  <th style="width:140px;">Action</th>
+                </tr>
+                <tr>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span></div></td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-txt">Brandon Donkor</span>
+                    </div>
+                  </td>
+                  <td>Full refund</td>
+                  <td>Urgent</td>
+                  <td>
+                    <span class="act-btn">
+                      <a data-toggle="modal" data-target="#transModal-2" href="#"><i class="icon-icon-tick"></i></a>
+                      <a data-toggle="modal" data-target="#transModal" class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span></div></td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-txt">Kwashie Opong</span>
+                    </div>
+                  </td>
+                  <td>KYC status change</td>
+                  <td>-</td>
+                  <td>
+                    <span class="act-btn">
+                      <a data-toggle="modal" data-target="#transModal-2" href="#"><i class="icon-icon-tick"></i></a>
+                      <a data-toggle="modal" data-target="#transModal" class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span></div></td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-txt">Akua Ado</span>
+                    </div>
+                  </td>
+                  <td>Delete transaction</td>
+                  <td>no info</td>
+                  <td>
+                    <span class="act-btn">
+                      <a data-toggle="modal" data-target="#transModal-2" href="#"><i class="icon-icon-tick"></i></a>
+                      <a data-toggle="modal" data-target="#transModal" class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span></div></td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-txt">Nkruma Essel</span>
+                    </div>
+                  </td>
+                  <td>Block a user</td>
+                  <td>permission violat...</td>
+                  <td>
+                    <span class="act-btn">
+                      <a data-toggle="modal" data-target="#transModal-2" href="#"><i class="icon-icon-tick"></i></a>
+                      <a data-toggle="modal" data-target="#transModal" class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span></div></td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-txt">Adjoa Seidu</span>
+                    </div>
+                  </td>
+                  <td>Change email address</td>
+                  <td>urgent, update pls</td>
+                  <td>
+                    <span class="act-btn">
+                      <a data-toggle="modal" data-target="#transModal-2" href="#"><i class="icon-icon-tick"></i></a>
+                      <a data-toggle="modal" data-target="#transModal" class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span></div></td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-txt">Solomon Akie</span>
+                    </div>
+                  </td>
+                  <td>Edit ad campaign</td>
+                  <td>-</td>
+                  <td>
+                    <span class="act-btn">
+                      <a data-toggle="modal" data-target="#transModal-2" href="#"><i class="icon-icon-tick"></i></a>
+                      <a data-toggle="modal" data-target="#transModal" class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#314746</td>
+                  <td><div class="date">Aug 13, 2020 <span>08:13 PM</span></div></td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-txt">Emma Tetteh</span>
+                    </div>
+                  </td>
+                  <td>Deactivate ad campaign</td>
+                  <td>-</td>
+                  <td>
+                    <span class="act-btn">
+                      <a data-toggle="modal" data-target="#transModal-2" href="#"><i class="icon-icon-tick"></i></a>
+                      <a data-toggle="modal" data-target="#transModal" class="close-btn" href="#"><i class="icon-icon-close2"></i></a>
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </section>
+
+
+
+  <!-- Modal approveModal -->
+  <div class="modal fade" id="transModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal size-2">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Approval ID #314745</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="trans-details">
+            <div class="trans-details-left">
+              <div class="row modified">
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">Admin</span>
+                  <span class="popDesc">Bob Ado</span>
+                </div>
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">Action</span>
+                  <span class="popDesc">KYC status change (Approved)</span>
+                </div>
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">Date</span>
+                  <span class="popDesc">Aug 12, 2020</span>
+                </div>
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">User</span>
+                  <div class="sender mt-2">
+                    <span class="sender-img"><img src="assets/images/user-4.jpg" alt=""></span>
+                    <span class="sender-txt">Brandon Donkor <br> <a href="#">dihunter228@gmail.com</a></span>
+                  </div>
+                </div>
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">ID Type</span>
+                  <span class="popDesc">National ID</span>
+                </div>
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">ID Number</span>
+                  <span class="popDesc">AC355390</span>
+                </div>
+                <div class="col-sm-12 tarnsDetails alt">
+                  <div class="idUp">
+                    <span>Uploaded image</span>
+                    <img src="assets/images/id.png" alt="">
+                  </div>
+                </div>
+                <div class="form-group col-lg-12 mb-0">
+                  <label for="exampleInputEmail1">Comments</label>
+                </div>
+                <div class="form-group col-lg-8">
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-lg-4">
+                  <button class="btn btn-block grey-btn" type="button">Postpone</button>
+                </div>
+                <div class="col-sm-12">
+                  <div class="row modified">
+                    <div class="col-sm-6">
+                      <button data-dismiss="modal" data-toggle="modal" data-target="#transModal-2" class="btn btn-block green-btn" type="button"><i class="icon-icon-tick"></i> Approve</button>
+                    </div>
+                    <div class="col-sm-6">
+                      <button class="btn btn-block red-btn" type="button"><i class="icon-icon-close2"></i> Decline</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal approveModal -->
+
+
+  <!-- Modal declineModal -->
+  <div class="modal fade" id="transModal-2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal size-2">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Approval ID #314745</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="trans-details">
+            <div class="trans-details-left">
+              <div class="row modified">
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">Admin</span>
+                  <span class="popDesc">James Anderson</span>
+                </div>
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">Action</span>
+                  <span class="popDesc">Full refund</span>
+                </div>
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">Date</span>
+                  <span class="popDesc">Aug 13, 2020</span>
+                </div>
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">Amount</span>
+                  <span class="popDesc">GH₵380.50</span>
+                </div>
+                <div class="col-lg-6 tarnsDetails alt">
+                  <span class="popTitle">Sender</span>
+                  <div class="sender">
+                    <span class="sender-img"><img src="assets/images/user-2.jpg" alt=""></span>
+                    <span class="sender-txt">Diane Larbi <br> <a href="#">dihunter228@gmail.com</a></span>
+                  </div>
+                </div>
+                <div class="col-lg-6 tarnsDetails alt">
+                  <span class="popTitle">Receiver</span>
+                  <div class="sender">
+                    <span class="sender-img-comp"><img src="assets/images/egypt-air.png" alt=""></span>
+                    <span class="sender-txt">EgyptAir <br> <small>Travel</small> </span>
+                  </div>
+                </div>
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">Method</span>
+                  <span class="popDesc">Payment</span>
+                </div>
+                <div class="col-sm-6 tarnsDetails alt">
+                  <span class="popTitle">Transaction ID</span>
+                  <span class="popDesc">#3147679</span>
+                </div>
+              </div>
+              <div class="row modified">
+                <div class="form-group col-lg-12 mb-0">
+                  <label for="exampleInputEmail1">Comments</label>
+                </div>
+                <div class="form-group col-lg-8">
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-lg-4">
+                  <button class="btn btn-block grey-btn" type="button">Postpone</button>
+                </div>
+                <div class="col-sm-12">
+                  <div class="row modified">
+                    <div class="col-sm-6">
+                      <button class="btn btn-block green-btn" type="button"><i class="icon-icon-tick"></i> Approve</button>
+                    </div>
+                    <div class="col-sm-6">
+                      <button data-dismiss="modal" data-toggle="modal" data-target="#transModal" class="btn btn-block red-btn" type="button"><i class="icon-icon-close2"></i> Decline</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal declineModal -->
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <script src="assets/js/select2.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>

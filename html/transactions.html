@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <title>Pocketi - Transactions</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/icon.css">
+    <link rel="stylesheet" href="assets/css/ui.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+  </head>
+  <body>
+
+
+  <header class="site-header">
+    <div class="row align-items-center">
+      <div class="col-xl-2 col-lg-3 col-sm-5 col-8">
+        <div class="logo">
+          <div class="mobClick">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <img src="assets/images/logo.svg" alt="">
+        </div>
+      </div>
+      <div class="col-xl-7 col-lg-4 col-sm-1 col-1">
+        <div class="site-nav">
+          <ul class="clearfix">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a class="active" href="transactions.html">Transactions</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="merchants.html">Merchants</a></li>
+            <li><a href="approvals.html">Approvals</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-5 col-sm-6 col-3">
+        <div class="header-right">
+          <div class="top-search">
+            <div class="search-wrap clearable">
+              <input type="text" class="form-control" placeholder="Search">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <i class="clearable__clear icon-icon-close2"></i>
+            </div>
+          </div>
+          <div class="dropdown btnSet">
+            <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="account-settings.html">Account Settings</a>
+              <a class="dropdown-item" href="admin-management.html">Admin's Management</a>
+              <a class="dropdown-item" href="login.html">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="dash-wrap">
+
+    <div class="sec-block alt first">
+      <div class="row modified">
+        <div class="col-xl-7">
+          <div class="block-single alt">
+            <div class="block-heading">
+              <h2>Daily Growth</h2>
+              <h3>+453 <span>today</span></h3>
+              <div class="link-all">
+                <a href="#">Last week</a>
+                <a class="active" href="#">2 weeks</a>
+                <a href="#">This month</a>
+                <a href="#">Last month</a>
+                <a href="#">6 months</a>
+              </div>
+            </div>
+            <div class="growth-chart">
+              <canvas id="myChart2"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5">
+          <div class="block-single alt">
+            <div class="block-heading">
+              <h2>Transactions by Type</h2>
+              <div class="custom-select-wrap">
+                <select class="custom-select" name="state">
+                  <option>6 Months</option>
+                  <option>12 Months</option>
+                  <option>18 Months</option>
+                  <option>24 Months</option>
+                </select>
+              </div>
+            </div>
+            <div class="user-chart forTrans">
+              <canvas id="myDoughnutChart"></canvas>
+              <div class="user-chart-count">
+                <h3>67,734</h3>
+                <p>overall users</p>
+              </div>
+              <div class="user-chart-level">
+                <ul>
+                  <li><span class="chart-level-bg level-shop">25%</span> <span class="chart-level-txt">Shopping</span></li>
+                  <li><span class="chart-level-bg level-payment">20%</span> <span class="chart-level-txt">Payment for Bills</span></li>
+                  <li><span class="chart-level-bg level-food">15%</span> <span class="chart-level-txt">Food</span></li>
+                  <li><span class="chart-level-bg level-school">10%</span> <span class="chart-level-txt">School Fees</span></li>
+                  <li><span class="chart-level-bg level-travel">5%</span> <span class="chart-level-txt">Travel</span></li>
+                  <li><span class="chart-level-bg level-other">3%</span> <span class="chart-level-txt">Other</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-block alt">
+      <div class="block-single auto">
+        <div class="block-heading">
+          <h2>Transactions</h2>
+          <div class="table-btn">
+            <ul class="select-filter">
+              <li>By type: School Fees <span><i class="icon-icon-close"></i></span></li>
+              <li>By type: Shopping <span><i class="icon-icon-close"></i></span></li>
+              <li>By method: Payment <span><i class="icon-icon-close"></i></span></li>
+              <li>By status: Completed <span><i class="icon-icon-close"></i></span></li>
+            </ul>
+            <div class="dropdown inline drop-filter">
+              <a class="dropdown-toggle link" data-toggle="dropdown" href="#"><i class="icon-icon-filter"></i> Filters</a>
+              <div class="dropdown-menu">
+                <a class="clear-filter" href="#">Clear all</a>
+                <div class="row modified">
+                  <div class="col-5">
+                    <div class="filter-single">
+                      <h4>By status</h4>
+                      <label class="custom-check">Pending
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Completed
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Canceled
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7">
+                    <div class="filter-single">
+                      <h4>By transaction type</h4>
+                      <div class="row modified">
+                        <div class="col-6">
+                          <label class="custom-check">School Fees
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Bills
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Food
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Recharge
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                        <div class="col-6">
+                          <label class="custom-check">Travel
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Shopping
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Movies
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="custom-check">Others
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row modified">
+                  <div class="col-5">
+                    <div class="filter-single">
+                      <h4>By method</h4>
+                      <label class="custom-check">Payment
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Request
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7">
+                    <div class="filter-single">
+                      <h4>Sort by</h4>
+                      <label class="custom-check">Most recent
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Amount: from low to high
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custom-check">Amount: from high to low
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <input class="btn btn-block green-btn" type="submit" name="" value="Apply">
+              </div>
+            </div>
+            <div class="custom-select-wrap alt">
+              <select class="custom-select" name="state">
+                <option>All time</option>
+                <option>This month</option>
+                <option>Last month</option>
+                <option>6 months</option>
+                <option>All time</option>
+                <option>Custom range</option>
+              </select>
+            </div>
+            <a class="link green" data-toggle="modal" data-target="#exportModal" href="#"><i class="icon-icon-download"></i> Export</a>
+          </div>
+        </div>
+        <div class="transaction-main">
+          <div class="transaction-table">
+            <div class="table-responsive">
+              <table class="table theme-table">
+                <tr>
+                  <th>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </th>
+                  <th>Transaction ID</th>
+                  <th>Date</th>
+                  <th>Sender</th>
+                  <th>Receiver</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Method</th>
+                  <th>Type</th>
+                  <th style="width:160px;">Action</th>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="date">Aug 13, 2020 <span>08:13 PM</span> </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-2.jpg" alt=""></span>
+                      <span class="sender-txt">Diane Larbi <br> <a href="#">dihunter228@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-3.jpg" alt=""></span>
+                      <span class="sender-txt">Simon Livingston <br> <a href="#">simon88@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>GH₵87.12</td>
+                  <td>Pending</td>
+                  <td>Request</td>
+                  <td>-</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-refund"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-download"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr data-toggle="modal" data-target="#transModal">
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="date">Aug 13, 2020 <span>08:13 PM</span> </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-4.jpg" alt=""></span>
+                      <span class="sender-txt">Brandon Donkor <br> <a href="#">dihunter228@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-5.jpg" alt=""></span>
+                      <span class="sender-txt">Akua Ado <br> <a href="#">akuado154@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>GH₵87.12</td>
+                  <td>Completed</td>
+                  <td>Request</td>
+                  <td>-</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-refund"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-download"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr data-toggle="modal" data-target="#transModal-2">
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="date">Aug 13, 2020 <span>08:13 PM</span> </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-6.jpg" alt=""></span>
+                      <span class="sender-txt">Brandon Donkor <br> <a href="#">dihunter228@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img-comp"><img src="assets/images/egypt-air.png" alt=""></span>
+                      <span class="sender-txt">EgyptAir <br> <a href="#">Travel</a></span>
+                    </div>
+                  </td>
+                  <td>GH₵87.12</td>
+                  <td>Completed</td>
+                  <td>Payment</td>
+                  <td>Travel</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-refund"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-download"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="date">Aug 13, 2020 <span>08:13 PM</span> </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-7.jpg" alt=""></span>
+                      <span class="sender-txt">Akua Ado <br> <a href="#">akuado154@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img-comp"><i class="icon-icon-bill"></i></span>
+                      <span class="sender-txt">Electricity Bills</span>
+                    </div>
+                  </td>
+                  <td>GH₵87.12</td>
+                  <td>Completed</td>
+                  <td>Payment</td>
+                  <td>Bills</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-refund"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-download"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="date">Aug 13, 2020 <span>08:13 PM</span> </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-2.jpg" alt=""></span>
+                      <span class="sender-txt">Diane Larbi <br> <a href="#">dihunter228@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-3.jpg" alt=""></span>
+                      <span class="sender-txt">Emma Tetteh <br> <a href="#">emmatetteh@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>GH₵87.12</td>
+                  <td>Completed</td>
+                  <td>Request</td>
+                  <td>-</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-refund"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-download"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="date">Aug 13, 2020 <span>08:13 PM</span> </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-4.jpg" alt=""></span>
+                      <span class="sender-txt">Brandon Donkor <br> <a href="#">dihunter228@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img-comp"><i class="icon-icon-bag"></i></span>
+                      <span class="sender-txt">Shopping</span>
+                    </div>
+                  </td>
+                  <td>GH₵87.12</td>
+                  <td>Canceled</td>
+                  <td>Payment</td>
+                  <td>Shopping</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-refund"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-download"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="date">Aug 13, 2020 <span>08:13 PM</span> </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-5.jpg" alt=""></span>
+                      <span class="sender-txt">Emma Tetteh <br> <a href="#">emmatetteh@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-6.jpg" alt=""></span>
+                      <span class="sender-txt">Diane Larbi <br> <a href="#">dihunter228@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>GH₵87.12</td>
+                  <td>Completed</td>
+                  <td>Request</td>
+                  <td>-</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-refund"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-download"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr data-toggle="modal" data-target="#transModal-4">
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="date">Aug 13, 2020 <span>08:13 PM</span> </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-7.jpg" alt=""></span>
+                      <span class="sender-txt">Brandon Donkor <br> <a href="#">dihunter228@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/mtn.png" alt=""></span>
+                      <span class="sender-txt">MTN</span>
+                    </div>
+                  </td>
+                  <td>GH₵87.12</td>
+                  <td>Completed</td>
+                  <td>Payment</td>
+                  <td>Shopping</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-refund"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-download"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+                <tr data-toggle="modal" data-target="#transModal-3">
+                  <td>
+                    <label class="custom-check">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>#314746</td>
+                  <td>
+                    <div class="date">Aug 13, 2020 <span>08:13 PM</span> </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img"><img src="assets/images/user-2.jpg" alt=""></span>
+                      <span class="sender-txt">Diane Larbi <br> <a href="#">dihunter228@gmail.com</a></span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="sender">
+                      <span class="sender-img-comp"><i class="icon-icon-school"></i></span>
+                      <span class="sender-txt">School Fees</span>
+                    </div>
+                  </td>
+                  <td>GH₵87.12</td>
+                  <td>Completed</td>
+                  <td>Payment</td>
+                  <td>School Fees</td>
+                  <td>
+                    <a class="action-link" href="#"><i class="icon-icon-refund"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-download"></i></a>
+                    <a class="action-link" href="#"><i class="icon-icon-delete"></i></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-pagination">
+          <ul>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+            <li><a class="active" href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+            <li><a class="nxt" href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Modal exportModal -->
+  <div class="modal fade" id="exportModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal exportModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Export</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="select-box-wrap">
+            <div class="row modified">
+              <div class="col-sm-4">
+                <div class="select-box active">
+                  <div class="select-box-left">
+                    <img src="assets/images/file-1.svg" alt="">
+                    <p>Excel</p>
+                    <div class="circle-tick">
+                      <img src="assets/images/circle-tick.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="select-box">
+                  <div class="select-box-left">
+                    <img src="assets/images/file-2.svg" alt="">
+                    <p>CSV</p>
+                    <div class="circle-tick">
+                      <img src="assets/images/circle-tick.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="select-box">
+                  <div class="select-box-left">
+                    <img src="assets/images/file-3.svg" alt="">
+                    <p>PDF</p>
+                    <div class="circle-tick">
+                      <img src="assets/images/circle-tick.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <input class="btn btn-block green-btn" type="submit" name="" value="Continue to export 342 listings">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal exportModal -->
+
+
+
+  <!-- Modal transModal -->
+  <div class="modal fade" id="transModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Transaction ID #314745</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="trans-details">
+            <div class="row modified">
+              <div class="col-sm-9">
+                <div class="trans-details-left">
+                  <span class="transDate">Aug 13, 2020</span>
+                  <span class="transName">GH₵277.00</span>
+                  <span class="transStat">Completed</span>
+                  <div class="row modified">
+                    <div class="col-lg-6 tarnsDetails">
+                      <span class="popTitle">Sender</span>
+                      <div class="sender">
+                        <span class="sender-img"><img src="assets/images/user-4.jpg" alt=""></span>
+                        <span class="sender-txt">Diane Larbi <br> <a href="#">dihunter228@gmail.com</a></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 tarnsDetails">
+                      <span class="popTitle">Receiver</span>
+                      <div class="sender">
+                        <span class="sender-img"><img src="assets/images/user-5.jpg" alt=""></span>
+                        <span class="sender-txt">Akua Ado <br> <a href="#">akuado154@gmail.com</a></span>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Method</span>
+                      <span class="popDesc">Request</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="trans-details-right">
+                  <ul class="transLink">
+                    <li><a data-toggle="modal" data-target="#refundModal" href="#"><i class="icon-icon-refund"></i> Refund</a></li>
+                    <li><a href="#"><i class="icon-icon-download"></i> Export</a></li>
+                    <li><a href="#"><i class="icon-icon-delete"></i> Delete</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal transModal -->
+
+
+  <!-- Modal transModal-2 -->
+  <div class="modal fade" id="transModal-2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Transaction ID #314745</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="trans-details">
+            <div class="row modified">
+              <div class="col-sm-9">
+                <div class="trans-details-left">
+                  <span class="transDate">Aug 13, 2020</span>
+                  <span class="transName">GH₵277.00</span>
+                  <span class="transStat">Completed</span>
+                  <div class="row modified">
+                    <div class="col-lg-6 tarnsDetails">
+                      <span class="popTitle">Sender</span>
+                      <div class="sender">
+                        <span class="sender-img"><img src="assets/images/user-6.jpg" alt=""></span>
+                        <span class="sender-txt">Diane Larbi <br> <a href="#">dihunter228@gmail.com</a></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 tarnsDetails">
+                      <span class="popTitle">Receiver</span>
+                      <div class="sender">
+                        <span class="sender-img-comp"><img src="assets/images/egypt-air.png" alt=""></span>
+                        <span class="sender-txt">EgyptAir <br> <a href="#">Travel</a></span>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Method</span>
+                      <span class="popDesc">Payment</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Type</span>
+                      <span class="popDesc">Travel</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">PRN Number</span>
+                      <span class="popDesc">237539</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Payment details</span>
+                      <span class="popDesc">Credit</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="trans-details-right">
+                  <ul class="transLink">
+                    <li><a href="#"><i class="icon-icon-refund"></i> Refund</a></li>
+                    <li><a href="#"><i class="icon-icon-download"></i> Export</a></li>
+                    <li><a href="#"><i class="icon-icon-delete"></i> Delete</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal transModal-2 -->
+
+
+  <!-- Modal transModal-3 -->
+  <div class="modal fade" id="transModal-3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Transaction ID #314745</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="trans-details">
+            <div class="row modified">
+              <div class="col-sm-9">
+                <div class="trans-details-left">
+                  <span class="transDate">Aug 13, 2020</span>
+                  <span class="transName">GH₵277.00</span>
+                  <span class="transStat">Completed</span>
+                  <div class="row modified">
+                    <div class="col-lg-6 tarnsDetails">
+                      <span class="popTitle">Sender</span>
+                      <div class="sender">
+                        <span class="sender-img"><img src="assets/images/user-2.jpg" alt=""></span>
+                        <span class="sender-txt">Diane Larbi <br> <a href="#">dihunter228@gmail.com</a></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 tarnsDetails">
+                      <span class="popTitle">Receiver</span>
+                      <div class="sender">
+                        <span class="sender-img-comp"><i class="icon-icon-school"></i></span>
+                        <span class="sender-txt">School Fees</span>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Method</span>
+                      <span class="popDesc">Request</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Type</span>
+                      <span class="popDesc">School Fees</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Institute</span>
+                      <span class="popDesc">Ghana International School</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Location</span>
+                      <span class="popDesc">Ghana</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Fee Details</span>
+                      <span class="popDesc">Quarterly fees</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Student Number</span>
+                      <span class="popDesc">236722</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="trans-details-right">
+                  <ul class="transLink">
+                    <li><a href="#"><i class="icon-icon-refund"></i> Refund</a></li>
+                    <li><a href="#"><i class="icon-icon-download"></i> Export</a></li>
+                    <li><a href="#"><i class="icon-icon-delete"></i> Delete</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal transModal-3 -->
+
+
+  <!-- Modal transModal-4 -->
+  <div class="modal fade" id="transModal-4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Transaction ID #314745</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="trans-details">
+            <div class="row modified">
+              <div class="col-sm-9">
+                <div class="trans-details-left">
+                  <span class="transDate">Aug 13, 2020</span>
+                  <span class="transName">GH₵277.00</span>
+                  <span class="transStat">Completed</span>
+                  <div class="row modified">
+                    <div class="col-lg-6 tarnsDetails">
+                      <span class="popTitle">Sender</span>
+                      <div class="sender">
+                        <span class="sender-img"><img src="assets/images/user-7.jpg" alt=""></span>
+                        <span class="sender-txt">Brandon Donkor <br> <a href="#">dihunter228@gmail.com</a></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 tarnsDetails">
+                      <span class="popTitle">Receiver</span>
+                      <div class="sender">
+                        <span class="sender-img"><img src="assets/images/mtn.png" alt=""></span>
+                        <span class="sender-txt">MTN</span>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Invoice</span>
+                      <span class="popDesc">Sweets x3  •  ₵23.02 <br>Oranges x5  •  ₵12.87 <br>Chocolate  •  ₵10.21  </span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Delivery Cost</span>
+                      <span class="popDesc">₵1.76</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Fees</span>
+                      <span class="popDesc">5%</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Taxes</span>
+                      <span class="popDesc">₵2.45</span>
+                    </div>
+                    <div class="col-sm-6 tarnsDetails">
+                      <span class="popTitle">Shipping address</span>
+                      <span class="popDesc">207 Hudson Rd,  Kumasi, Ghana, +233 4573992198</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="trans-details-right">
+                  <ul class="transLink">
+                    <li><a href="#"><i class="icon-icon-refund"></i> Refund</a></li>
+                    <li><a href="#"><i class="icon-icon-download"></i> Export</a></li>
+                    <li><a href="#"><i class="icon-icon-delete"></i> Delete</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal transModal-4 -->
+
+
+  <!-- Modal refund -->
+  <div class="modal fade" id="refundModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered common-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Refund a transaction</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon-icon-close2"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="refundTrans">
+            <div class="row modified">
+              <div class="col-sm-6">
+                <div class="refundTrans-box active">
+                  <div class="refundTrans-top">
+                    <h3>Full refund</h3>
+                    <img src="assets/images/circle-tick.png" alt="">
+                  </div>
+                  <span class="reAmount">GH₵277.00</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="refundTrans-box">
+                  <div class="refundTrans-top">
+                    <h3>Partial refund</h3>
+                    <img src="assets/images/circle-tick.png" alt="">
+                  </div>
+                  <input type="text" class="form-control mt-3" placeholder="Enter custom amount">
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-4">
+              <label for="exampleInputEmail1">Reason for refund (optional)</label>
+              <input type="text" class="form-control" value="Requested by a customer">
+            </div>
+          </div>
+          <button class="btn btn-block green-btn"><i class="icon-icon-refund"></i> Refund</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal refund -->
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <script src="assets/js/select2.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <script type="text/javascript">
+  // chart-2 Bar chart
+  var ctx2 = document.getElementById('myChart2').getContext('2d');
+
+  var myChart2 = new Chart(ctx2, {
+      type: 'bar',
+      fillOpacity: .8,
+      data: {
+          labels: ['04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17'],
+          datasets: [
+              {
+                  label: "Payments",
+                  backgroundColor: '#38B635',
+                  borderColor: "#38B635",
+                  pointBorderColor: "#38B635",
+                  borderWidth:2,
+                  pointRadius: 4,
+                  pointHoverRadius: 4,
+                  pointBackgroundColor: "#FFF",
+                  data: [100, 80, 180, 300, 60, 200, 100, 80, 180, 300, 60, 200, 100, 80]
+              },
+              {
+                  label: "Requests",
+                  backgroundColor: '#CFEECE',
+                  borderColor: "#CFEECE",
+                  pointBorderColor: "#CFEECE",
+                  borderWidth:2,
+                  pointRadius: 4,
+                  pointHoverRadius: 4,
+                  pointBackgroundColor: "#FFF",
+                  data: [60, 100, 150, 200, 150, 80, 60, 100, 150, 200, 150, 80, 60, 100]
+              }
+          ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        bezierCurve: false,
+        elements: {
+          line: {
+              tension: 0
+          }
+      },
+          scales: {
+            xAxes: [{
+              gridLines: {color: "rgba(0, 0, 0, 0)"}
+          }],
+              yAxes: [{
+                ticks: {beginAtZero: true},
+                gridLines: {color: "rgba(244, 244, 244, 1)"}
+              }]
+          },
+
+          tooltips: {
+            custom: function(tooltip) {
+              if (!tooltip) return;
+              // disable displaying the color box;
+              tooltip.displayColors = false;
+            },
+            callbacks: {
+              // use label callback to return the desired label
+              label: function(tooltipItem, data) {
+                return "$" + tooltipItem.yLabel;
+              },
+              // remove title
+              title: function(tooltipItem, data) {
+                return;
+              }
+            },
+            backgroundColor: "#FFF",
+            borderColor: "rgba(0, 0, 0, 0.09)",
+            borderWidth: 1,
+            bodyFontColor:"rgba(0, 0, 0, 1)",
+            bodyAlign: 'center',
+            bodyFontSize: 14,
+            bodyFontStyle: 500
+          },
+          legend: {
+            align:'end',
+            labels:{
+              boxWidth: 12,
+              fontColor: "#A4A7B0"
+            }
+          }
+      }
+  });
+  // chart-2 Bar chart
+
+
+
+  var ctx3 = document.getElementById('myDoughnutChart').getContext('2d');
+  var myDoughnutChart = new Chart(ctx3, {
+      type: 'doughnut',
+      data: {
+          labels: ['Shopping', 'Payment for Bills', 'Food', 'School Fees', 'Travel', 'Other'],
+          datasets: [
+              {
+                data: [25, 20, 15, 10, 5, 3],
+                backgroundColor: [
+                  '#1C932F',
+                  '#4EA5F6',
+                  '#F75009',
+                  '#59E827',
+                  '#F79809',
+                  '#7C27E8'
+                ],
+                borderColor: [
+                  '#1C932F',
+                  '#4EA5F6',
+                  '#F75009',
+                  '#59E827',
+                  '#F79809',
+                  '#7C27E8'
+                ],
+              },
+          ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutoutPercentage: 70,
+          tooltips: {
+            custom: function(tooltip) {
+              if (!tooltip) return;
+              // disable displaying the color box;
+              tooltip.displayColors = false;
+            },
+            backgroundColor: "#FFF",
+            borderColor: "rgba(0, 0, 0, 0.09)",
+            borderWidth: 1,
+            bodyFontColor:"rgba(0, 0, 0, 1)",
+            bodyAlign: 'center',
+            bodyFontSize: 14,
+            bodyFontStyle: 500
+          },
+          legend: {
+            align:'center',
+            position: 'right',
+            display: false,
+            labels:{
+              boxWidth: 42,
+              padding: 15,
+              fontColor: "#373737"
+            }
+          }
+      }
+  });
+
+  </script>
+  </body>
+</html>

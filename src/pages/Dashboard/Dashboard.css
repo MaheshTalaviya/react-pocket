@@ -1,0 +1,29 @@
+.merchant-rev-details li .merchant-stat {
+  padding: 0 0px 0 0;
+  text-align: right;
+}
+.merchant-rev-details li .merchant-val {
+  position: relative;
+  margin: 8px 0 0 0;
+  width: 25%;
+  padding: 0px 10px;
+  text-align: right;
+}
+.graph-sec {
+  display: flex;
+}
+.input-bar {
+  width: 75%;
+}
+.sec-login .row {
+  margin: 0px;
+}
+.site-header .dropdown-menu {
+  left: 0 !important;
+}
+.top-search {
+  display: none;
+}
+.transactionTable .disabled.action-link.activeBtnColor {
+  cursor: not-allowed;
+}
